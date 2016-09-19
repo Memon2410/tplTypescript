@@ -1,24 +1,17 @@
 # tplTypescript
 Template - Jade, Typescript, SASS, 
 
-# Install Node Modules
-npm install
+Install Node Modules - npm install
 
+Task Compile JADE - gulp jade
 
-# Task Compile JADE
-gulp jade
+Task Compile SASS - gulp sass
 
-# Task Compile SASS
-gulp sass
+Task Compile TYPESCRIPT - gulp typescript
 
-# Task Compile TYPESCRIPT
-gulp typescript
+Task Start Server - gulp webserver
 
-# Task Start Server
-gulp webserver
-
-# Task Watch [jade, sass, typescript]
-gulp watch
+Task Watch [jade, sass, typescript] - gulp watch
 
 
 
