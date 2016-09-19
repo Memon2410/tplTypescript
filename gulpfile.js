@@ -1,5 +1,4 @@
 var gulp = require("gulp"),
-	//Orchestrator = require('orchestrator'),
 	browserify = require("browserify"),
 	source = require("vinyl-source-stream"),
 	watchify = require("watchify"),
