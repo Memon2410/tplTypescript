@@ -1,0 +1,43 @@
+$color: aqua;
+$other-color: gray;
+
+$altura: 100%;
+$altura-footer: 100px;
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+html, body {
+	height: $altura;
+}
+
+header {
+	width: 600px / 960px * 100%; /* 62.5%*/
+	margin: 0 auto;
+	background-color: $other-color;
+	@include border-radius(10px);
+}
+  
+footer {
+	background-color: $color;
+	@include border-radius(20px);
+}
+
+.wrapper {
+	min-height: $altura;
+	margin-bottom: -$altura-footer;
+}
+
+.wrapper:after {
+	content: "";
+	display: block;
+}
+
+.site-footer, .wrapper:after {
+	height: $altura-footer;
+}
+
