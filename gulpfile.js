@@ -68,7 +68,7 @@ gulp.task("typescript", function () {
     .pipe(source('functions.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify().on('error', gutil.log))
+    //.pipe(uglify().on('error', gutil.log)) // En algunos casos 'Error' al minificar
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(path.js));
 });
