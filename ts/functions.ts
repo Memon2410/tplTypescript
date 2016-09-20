@@ -1,3 +1,6 @@
+/// <reference path="libs/jquery.d.ts" />
+/// <reference path="libs/greensock.d.ts" />
+
 import { sayHello } from "./greet";
 import { User } from "./examples/exampleClass";
 import { Car, Motorcycle } from "./examples/exampleInheritance";
@@ -129,3 +132,23 @@ function showHello(divName: string, name: string) {
 }
 		
 showHello("greetings", "TypeScript");
+
+/* JQUERY */
+'use strict';
+class Main {
+    constructor() {
+        $(document).ready(() => {
+
+            console.log('Ready!');
+            TweenMax.from($('header'), 2, {delay:2, scaleX:0.5, ease:Expo.easeIn	});
+            TweenMax.to($('article'), 1, {delay:4, rotationX:90, ease:Power2.easeOut});
+            TweenMax.to($('.site-footer'), 3, {delay:5, x: 100, y: -200, ease:Elastic.easeInOut})
+        });
+
+        $(window).resize(() => {
+        	console.log('Resize!!');
+        });
+    }
+}
+
+var main:Main = new Main();

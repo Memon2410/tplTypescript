@@ -102,21 +102,8 @@ class Clock {
 }
 exports.Clock = Clock;
 },{}],6:[function(require,module,exports){
-"use strict";
 /* se definen con la sintaxis () => {} y es especialmente útil
 para decirle a nuestra aplicación sobre que contexto debe trabajar this*/
-// With Lambda
-exports.stationLambda = {
-    names: ["Piera", "Martorell", "Manresa", "Igualada", "Cornellá"],
-    randomStation: function () {
-        //esta es la clave
-        return () => {
-            console.log(this);
-            var rand = this.names[Math.floor(Math.random() * this.names.length)];
-            return { random: rand };
-        };
-    }
-};
 // Not Lambda don´t work | this = undefined
 /*
 var names = ["Piera", "Martorell", "Manresa", "Igualada", "Cornellá"];
@@ -132,6 +119,41 @@ var station = {
 var newStation = station.randomStation()();
 console.log("Station: " + newStation.random);
 */
+"use strict";
+var shape = {
+    name: 'rectangle',
+    popup: function () {
+        console.log('This inside popup(): ' + this.name);
+        setTimeout(function () {
+            console.log('This inside setTimeout(): ' + this.name);
+            console.log("I'm a " + this.name + "!");
+        }, 3000);
+    }
+};
+shape.popup();
+// With Lambda
+exports.stationLambda = {
+    names: ["Piera", "Martorell", "Manresa", "Igualada", "Cornellá"],
+    randomStation: function () {
+        //esta es la clave
+        return () => {
+            console.log(this);
+            var rand = this.names[Math.floor(Math.random() * this.names.length)];
+            return { random: rand };
+        };
+    }
+};
+var shapeLambda = {
+    name: 'rectangle',
+    popup: function () {
+        console.log('This inside popup(): ' + this.name);
+        setTimeout(() => {
+            console.log('This inside setTimeout(): ' + this.name);
+            console.log("I'm a " + this.name + "!");
+        }, 3000);
+    }
+};
+shapeLambda.popup();
 },{}],7:[function(require,module,exports){
 "use strict";
 //modules
@@ -221,6 +243,8 @@ var Validator;
     Validator.EmailValid = EmailValid;
 })(Validator = exports.Validator || (exports.Validator = {}));
 },{}],9:[function(require,module,exports){
+/// <reference path="libs/jquery.d.ts" />
+/// <reference path="libs/greensock.d.ts" />
 "use strict";
 const greet_1 = require("./greet");
 const exampleClass_1 = require("./examples/exampleClass");
@@ -332,6 +356,22 @@ function showHello(divName, name) {
     elt.innerText = greet_1.sayHello(name);
 }
 showHello("greetings", "TypeScript");
+/* JQUERY */
+'use strict';
+class Main {
+    constructor() {
+        $(document).ready(() => {
+            console.log('Ready!');
+            TweenMax.from($('header'), 2, { delay: 2, scaleX: 0.5, ease: Expo.easeIn });
+            TweenMax.to($('article'), 1, { delay: 4, rotationX: 90, ease: Power2.easeOut });
+            TweenMax.to($('.site-footer'), 3, { delay: 5, x: 100, y: -200, ease: Elastic.easeInOut });
+        });
+        $(window).resize(() => {
+            console.log('Resize!!');
+        });
+    }
+}
+var main = new Main();
 },{"./examples/exampleClass":1,"./examples/exampleFunction":2,"./examples/exampleGenerics":3,"./examples/exampleInheritance":4,"./examples/exampleInterface":5,"./examples/exampleLambda":6,"./examples/exampleMerging":7,"./examples/exampleModule":8,"./greet":10}],10:[function(require,module,exports){
 "use strict";
 function sayHello(name) {
