@@ -14,5 +14,3 @@ Task Start Server - gulp webserver
 Task Watch [jade, sass, typescript] - gulp watch
 
 
-
-

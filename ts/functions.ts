@@ -1,5 +1,5 @@
-/// <reference path="libs/jquery.d.ts" />
-/// <reference path="libs/greensock.d.ts" />
+/// <reference path="../typings/globals/jquery/index.d.ts" />
+/// <reference path="../typings/globals/greensock/index.d.ts" />
 
 import { sayHello } from "./greet";
 import { User } from "./examples/exampleClass";
@@ -138,8 +138,8 @@ showHello("greetings", "TypeScript");
 class Main {
     constructor() {
         $(document).ready(() => {
-
             console.log('Ready!');
+
             TweenMax.from($('header'), 2, {delay:2, scaleX:0.5, ease:Expo.easeIn	});
             TweenMax.to($('article'), 1, {delay:4, rotationX:90, ease:Power2.easeOut});
             TweenMax.to($('.site-footer'), 3, {delay:5, x: 100, y: -200, ease:Elastic.easeInOut})

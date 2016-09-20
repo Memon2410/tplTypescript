@@ -243,8 +243,8 @@ var Validator;
     Validator.EmailValid = EmailValid;
 })(Validator = exports.Validator || (exports.Validator = {}));
 },{}],9:[function(require,module,exports){
-/// <reference path="libs/jquery.d.ts" />
-/// <reference path="libs/greensock.d.ts" />
+/// <reference path="../typings/globals/jquery/index.d.ts" />
+/// <reference path="../typings/globals/greensock/index.d.ts" />
 "use strict";
 const greet_1 = require("./greet");
 const exampleClass_1 = require("./examples/exampleClass");
