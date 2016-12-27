@@ -1,16 +1,13 @@
-# tplTypescript
-Template - Jade, Typescript, SASS, 
+# Template Jade, TS, SASS 
+Template realizado con Jade, Typescript y SASS.
 
-Install Node Modules - npm install
+## Instalación
+Se requiere tener instalado Node. https://nodejs.org
 
-Task Compile JADE - gulp jade
+Las configuraciones de instalación del proyecto están el package.json. Para la instalación solo se necesita correr desde el terminal
 
-Task Compile SASS - gulp sass
+```
+npm install
 
-Task Compile TYPESCRIPT - gulp typescript
-
-Task Start Server - gulp webserver
-
-Task Watch [jade, sass, typescript] - gulp watch
-
+```
 
